@@ -123,3 +123,76 @@ The development will be carried out in phases:
 This project focuses on providing a practical solution to a real-world problem faced by Swiggy delivery partners. By using AI and automation, the system ensures quick and fair compensation for income loss caused by external conditions.
 
 The approach is simple, scalable, and designed to create a reliable safety net for gig workers.
+## 12. Adversarial Defense & Anti-Spoofing Strategy
+
+With the rise of coordinated fraud attacks such as GPS spoofing and fake claim generation, the system must be designed to detect and prevent malicious behavior without affecting genuine users.
+
+### Problem Scenario
+
+In a “Market Crash” situation, multiple delivery partners may attempt to fake their location or simulate disruption conditions to trigger false payouts. This can lead to large financial losses for the platform.
+
+### Proposed Defense Strategy
+
+#### 1. Multi-Source Location Verification
+
+Instead of relying only on GPS, the system cross-verifies location using:
+
+* Device GPS data
+* Network-based location (IP address)
+* Historical movement patterns
+
+Any mismatch between these sources raises a red flag.
+
+#### 2. Behavioral Pattern Analysis
+
+The system tracks user activity over time, including:
+
+* Daily working hours
+* Usual delivery zones
+* Movement consistency
+
+Sudden abnormal patterns (e.g., user appears in a new location during a disruption without prior history) are flagged.
+
+#### 3. Cluster Detection (Fraud Rings)
+
+AI models are used to identify suspicious groups of users:
+
+* Multiple users claiming payouts from the same location at the same time
+* Similar device or network signatures
+* Coordinated activity patterns
+
+Such clusters are marked for further verification.
+
+#### 4. Real-World Activity Validation
+
+The system verifies whether the user was actually active during the disruption:
+
+* Integration with platform activity logs (mock/simulated)
+* Checking delivery acceptance and completion data
+
+If no activity is detected, the claim is considered suspicious.
+
+#### 5. Risk Scoring System
+
+Each claim is assigned a risk score based on:
+
+* Location consistency
+* Behavior history
+* Claim frequency
+
+High-risk claims are either delayed or require additional verification.
+
+#### 6. Fairness for Genuine Users
+
+The system is designed to ensure that:
+
+* Genuine users receive payouts without delay
+* Only suspicious claims are flagged
+* No blanket rejection is applied
+
+This maintains trust while ensuring platform security.
+
+### Conclusion
+
+By combining multi-source verification, behavioral analysis, and AI-based anomaly detection, the system can effectively prevent fraud attacks while still providing a seamless experience for genuine delivery partners.
+
