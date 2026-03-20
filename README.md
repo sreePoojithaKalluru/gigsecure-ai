@@ -1,4 +1,4 @@
-# AI-Insurance-Swiggy
+# gigsecure-ai
 # AI-Powered Income Protection for Swiggy Delivery Partners
 
 ## 1. Introduction
